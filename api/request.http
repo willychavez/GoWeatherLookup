@@ -1,0 +1,9 @@
+@cep=11111111
+
+GET http://localhost:3000/weather?zipcode={{cep}} HTTP/1.1
+Content-Type: application/json
+
+
+###
+GET http://localhost:3000/healthz HTTP/1.1
+Content-Type: application/json

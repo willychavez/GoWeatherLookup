@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    command: sh -c "gin -i --appPort 8080 --bin build/gin-bin run main.go | ts"
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app/:/app
+    env_file:
+      - env
