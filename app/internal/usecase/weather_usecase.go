@@ -3,6 +3,7 @@ package usecase
 import (
 	"errors"
 	"fmt"
+	"log"
 
 	"github.com/willychavez/GoWeatherLookup/app/internal/domain"
 )
@@ -18,6 +19,7 @@ func (w *WeatherUseCase) GetWeatherByZipCode(zipCode string) (*domain.WeatherRes
 		return nil, errors.New("can not find zipcode")
 	}
 
+	log.Println("City found: ", city)
 	tempC, err := w.WeatherRepo.GetCurrentTemperature(city)
 	if err != nil {
 		return nil, fmt.Errorf("unable to fetch the current temperature for city: %s", city)

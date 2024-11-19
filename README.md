@@ -56,3 +56,13 @@
 
 5. Test requests are available in the `api` folder for convenience.
 
+
+## Cloud Run Test
+
+To test the application on Google Cloud Run, you can use the following `curl` command:
+
+```bash
+curl -X GET "https://go-weather-lookup-164236700015.us-central1.run.app/weather?zipcode={{zipcode}}" -H "Content-Type: application/json"
+```
+
+Replace `{{zipcode}}` with the ZIP code you want to look up to get the current weather information.
